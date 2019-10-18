@@ -16,6 +16,7 @@ class Player {
     }
 
     roll(dice) {
+        
         alert(dice);
     }
 }
@@ -26,10 +27,11 @@ createCharakterBtn.addEventListener('click', function () {
     player.roll();
 })
 
-for (i = 1; i < 11; i++) {
+for (i = 1; i < 26; i++) {
     let playerRolls = document.getElementById('p' + i);
     playerRolls.addEventListener('click', function () {
         let player = new Player();
+        player.name(this.name);
         player.roll(parseInt(this.innerHTML));
     })
 }
