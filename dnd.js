@@ -26,10 +26,8 @@ createCharakterBtn.addEventListener('click', function () {
     player.roll();
 })
 
-let buttons = [1,2];
-for (i = 1; i < buttons.length; i++) {
+for (i = 1; i < 11; i++) {
     let playerRolls = document.getElementById('p' + i);
-    buttons.push(playerRolls);
     playerRolls.addEventListener('click', function () {
         let player = new Player();
         player.roll(parseInt(this.innerHTML));
