@@ -1,7 +1,7 @@
 class Player {
-    constructor(name, roll) {
+    constructor(name, dice) {
         this.playerName = name;
-        this.rollResult = getRandomInt(roll);
+        this.rollResult = rollDice(dice);
     }
 }
 
@@ -13,8 +13,8 @@ for (i = 1; i < 26; i++) {
     })
 }
 
-function getRandomInt(max) {
-    max = Math.floor(Math.random() * Math.floor(max));
-    if (max === 0) max++;
-    return max;
+function rollDice(number) {
+    number = Math.floor(Math.random() * Math.floor(number));
+    if (number === 0) number++;
+    return number;
 }
