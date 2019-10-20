@@ -1,29 +1,32 @@
 //TODO Klassenfunktionen auftrennen
-
 class Player {
-    constructor(name, dice) {
-        this.playerName = name;
-        this.rollResult = rollDice(dice);
+
+    constructor(name) {
+        this.name(name);
+        this.charImage(name);
+        this.dice(name);
     }
 
-    createNewPlayer(name) {
-        let diceList = [20, 6, 8, 10, 12, 100];
-
+    name(name) {
         let nameInput = document.createElement('input');
-        let charDiv = document.createElement('div');
-        let diceDiv = document.createElement('div');
         nameInput.setAttribute('class', 'names');
         nameInput.setAttribute('value', name);
-        charDiv.setAttribute('class', 'chars');
-        charDiv.setAttribute('id', name)
-        charDiv.style.background = 'grey';
-        diceDiv.setAttribute('class', 'chars');
-        diceDiv.setAttribute('id', name + 'Dice');
         document.getElementById('nameContainer').appendChild(nameInput);
+    }
+
+    charImage(name) {
+        let charDiv = document.createElement('div');
+        charDiv.setAttribute('class', 'chars background');
+        charDiv.setAttribute('id', name);
         document.getElementById('charContainer').appendChild(charDiv);
+    }
+
+    dice(name) {
+        let diceList = [20, 6, 8, 10, 12, 100];
+        let diceDiv = document.createElement('div');
+        diceDiv.setAttribute('class', 'chars');
+        diceDiv.setAttribute('id', name + '_Dice');
         document.getElementById('diceContainer').appendChild(diceDiv);
-
-
 
         let dropDown = document.createElement('div');
         dropDown.setAttribute('class', 'dropdown');
@@ -33,13 +36,20 @@ class Player {
         let dropDownContent = document.createElement('div');
         dropDownContent.setAttribute('class', 'dropdown-content');
         dropDown.appendChild(dropDownContent);
+        document.getElementById(name + '_Dice').appendChild(dropDown);
 
-        for (i = 0; i < diceList.length; i++) {
+        for (let i = 0; i < diceList.length; i++) {
             let a = document.createElement('a');
             a.setAttribute('href', '#');
             a.innerHTML = diceList[i];
-            a.setAttribute('name', document.getElementById('nameInput').value);
+            a.setAttribute('id', name + i);
             dropDownContent.appendChild(a);
+            let diceButton = document.getElementById(name + i);
+            diceButton.addEventListener('click', function () {
+                let diceEyes = this.innerHTML;
+                let rollResult = rollDice(diceEyes);
+                console.log(name + " würfelt " + rollResult + " (d" + diceEyes + ")");
+            })
         }
 
         let image = document.createElement('img');
@@ -47,43 +57,21 @@ class Player {
         image.setAttribute('src', 'd20.png');
         image.setAttribute('alt', 'd20');
 
-        document.getElementById(name + 'Dice').appendChild(dropDown);
-        document.getElementById(name + 'Dice').appendChild(image);
-
-    }
-}
-
-class NewPlayer {
-    
-    name() {
-
-    }
-
-    image() {
-
-    }
-
-    dice() {
-
+        document.getElementById(name + '_Dice').appendChild(image);
     }
 }
 
 createBtn = document.getElementById('createCharakterBtn');
 createBtn.addEventListener('click', function () {
-    let player = new Player();
-    player.createNewPlayer(document.getElementById('nameInput').value);
+    let nameInput = document.getElementById('nameInput').value;
+    if (nameInput === "") {
+        alert('charfenster leer');
+    } else {
+        let player = new Player(nameInput);
+    }
 })
 
-for (i = 1; i < 26; i++) {
-    let playerRolls = document.getElementById('p' + i);
-    playerRolls.addEventListener('click', function () {
-        let player = new Player(this.name, parseInt(this.innerHTML));
-        console.log(player);
-    })
-}
-
 function rollDice(number) {
-    number = Math.floor(Math.random() * Math.floor(number));
-    if (number === 0) number++;
+    number = Math.floor(Math.random() * number) + 1;
     return number;
 }
