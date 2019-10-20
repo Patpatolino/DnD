@@ -1,6 +1,6 @@
 //TODO Klassenfunktionen auftrennen
 
-lass Player {
+class Player {
     constructor(name, dice) {
         this.playerName = name;
         this.rollResult = rollDice(dice);
@@ -18,7 +18,7 @@ lass Player {
         charDiv.setAttribute('id', name)
         charDiv.style.background = 'grey';
         diceDiv.setAttribute('class', 'chars');
-        diceDiv.setAttribute('id', name+'Dice');
+        diceDiv.setAttribute('id', name + 'Dice');
         document.getElementById('nameContainer').appendChild(nameInput);
         document.getElementById('charContainer').appendChild(charDiv);
         document.getElementById('diceContainer').appendChild(diceDiv);
@@ -47,8 +47,23 @@ lass Player {
         image.setAttribute('src', 'd20.png');
         image.setAttribute('alt', 'd20');
 
-        document.getElementById(name+'Dice').appendChild(dropDown);
-        document.getElementById(name+'Dice').appendChild(image);
+        document.getElementById(name + 'Dice').appendChild(dropDown);
+        document.getElementById(name + 'Dice').appendChild(image);
+
+    }
+}
+
+class NewPlayer {
+    
+    name() {
+
+    }
+
+    image() {
+
+    }
+
+    dice() {
 
     }
 }
