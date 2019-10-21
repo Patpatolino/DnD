@@ -48,7 +48,9 @@ class Player {
             diceButton.addEventListener('click', function () {
                 let diceEyes = this.innerHTML;
                 let rollResult = rollDice(diceEyes);
-                console.log(name + " würfelt " + rollResult + " (d" + diceEyes + ")");
+                let log = document.getElementById('chatLog');
+                log.append(name + " würfelt " + rollResult + " (d" + diceEyes + ")" + "\n");
+                document.getElementById("chatLog").scrollTop = document.getElementById("chatLog").scrollHeight; //textarea autoscroll
             })
         }
 
