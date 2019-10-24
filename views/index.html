@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head id=''>
+    <meta http-equiv="Content-Type" const="text/html;charset=UTF-8" />
+    <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
+    <title>DnD by Patpat</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body id="home">
+
+    <form>
+        <input type="text" class="input" autocomplete="off" autofocus />
+        <button>Send</button>
+    </form>
+    <ul class="messages"></ul>
+    
+    <input type="text" id="nameInput" value="">
+    <button id="createCharakterBtn">Create Charakter</button>
+
+    <div id='dungeonMasterContainer'>
+        <div id='dungeonMasterDiv'></div>
+    </div>
+
+    <div id="utilityContainer">
+        <textarea id="chatLog" readonly="true"></textarea>
+    </div>
+
+    <div id='nameContainer'>
+    </div>
+
+    <div id='charContainer'>
+    </div>
+
+    <div id='diceContainer'>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+<script type="text/javascript" src="dnd.js"></script>
+
+</html>
