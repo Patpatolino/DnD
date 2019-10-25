@@ -18,7 +18,6 @@ const io = require("socket.io")(server);
 //playerList
 let playerList = [];
 
-
 io.on('connection', (socket) => {
     console.log('New user connected');
 
