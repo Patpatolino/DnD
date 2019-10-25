@@ -41,7 +41,14 @@ io.on('connection', (socket) => {
 
     socket.on("chat_message", function (data) {
         data.username = this.username;
+        // socket.emit("chat_message", data);
         socket.broadcast.emit("chat_message", data);
+    });
+
+    socket.on("roll", function (data) {
+        data.username = this.username;
+        socket.emit("roll", data);
+        socket.broadcast.emit("roll", data);
     });
 
     socket.on("disconnect", function (data) {
@@ -63,13 +70,5 @@ io.on('connection', (socket) => {
         //tests
     });
 
-    // socket.on("myEvent", function(){
-    //     socket.emit("showPlayers", liste);
-    // })
-
-
-    // socket.emit("showPlayers", {
-    //     playerList
-    //   });
 
 })

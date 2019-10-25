@@ -1,3 +1,10 @@
+let playerList = []
+const form = document.querySelector("form");
+const input = document.querySelector(".input");
+const messages = document.querySelector(".messages");
+const username = prompt("Gib deinen Charakternamen ein:");
+const socket = io();
+
 class Player {
 
     constructor(name) {
@@ -54,10 +61,18 @@ class Player {
             diceButton.addEventListener('click', function () {
                 let diceEyes = this.innerHTML;
                 let rollResult = rollDice(diceEyes);
-                let log = document.getElementById('chatLog');
-                log.append(name + " würfelt " + rollResult + " (d" + diceEyes + ")" + "\n");
-                document.getElementById("chatLog").scrollTop = document.getElementById("chatLog").scrollHeight; //textarea autoscroll
+                // let log = document.getElementById('chatLog');
+                // log.append(name + " würfelt " + rollResult + " (d" + diceEyes + ")" + "\n");
+                // document.getElementById("chatLog").scrollTop = document.getElementById("chatLog").scrollHeight;
+
+                socket.emit("roll", {
+                    message: " würfelt " + rollResult + " (d" + diceEyes + ")" + "\n"
+                });
+
+                //textarea autoscroll
             })
+
+
         }
 
         let image = document.createElement('img');
@@ -68,16 +83,6 @@ class Player {
         document.getElementById(name + '_Dice').appendChild(image);
     }
 }
-
-
-
-
-let playerList = []
-const form = document.querySelector("form");
-const input = document.querySelector(".input");
-const messages = document.querySelector(".messages");
-const username = prompt("Gib deinen Charakternamen ein:");
-const socket = io();
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -96,16 +101,24 @@ socket.on("chat_message", function (data) {
     addMessage(data.username + ": " + data.message);
 });
 
+socket.on("roll", function (data) {
+    addMessage(data.username + data.message);
+});
+
+// socket.on("chat_message", function (data) {
+//     addMessage(data.message);
+// });
+
+// socket.on("chat_message", function (data) {
+//     addMessage(data + ": ");
+// });
+
 socket.on("user_join", function (data) {
-    addMessage(data + " just joined the chat!");
+    addMessage("Grüße " + data + "!");
 });
 
 socket.on("user_leave", function (data) {
-    addMessage(data + " has left the chat.");
-    
-    // for (i = 0; i < data.playerList.length; i++) {
-    //     let player = new Player(data.playerList[i]);
-    // }
+    addMessage("Gehabt Euch Wohl, " + data + "!");
 });
 
 socket.on("showPlayers", function (data) {
@@ -119,14 +132,16 @@ socket.on("showPlayers", function (data) {
     }
 });
 
-addMessage("You have joined the chat as " + username + ".");
+addMessage("Grüße " + username + ".");
 socket.emit("user_join", username);
 
 function addMessage(message) {
     const li = document.createElement("li");
     li.innerHTML = message;
     messages.appendChild(li);
-    window.scrollTo(0, document.body.scrollHeight);
+    document.getElementById("chatLog").scrollTop = document.getElementById("chatLog").scrollHeight;
+
+    // window.scrollTo(0, document.body.scrollHeight);
 }
 
 // createBtn = document.getElementById('createCharakterBtn');
