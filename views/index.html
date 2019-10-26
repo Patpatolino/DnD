@@ -3,7 +3,8 @@
 
 <head id=''>
     <meta http-equiv="Content-Type" const="text/html;charset=UTF-8" />
-    <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css"> -->
     <title>DnD by Patpat</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
@@ -11,21 +12,24 @@
 <body id="home">
 
     <form>
-        <input type="text" class="input" autocomplete="off" autofocus />
+        <input type="text" class="input" autocomplete="off" maxlength="50" autofocus />
         <button>Send</button>
     </form>
-    
-    
-    <!-- <input type="text" id="nameInput" value="">
-    <button id="createCharakterBtn">Create Charakter</button> -->
 
     <div id='dungeonMasterContainer'>
-        <div id='dungeonMasterDiv'></div>
+        <div id='dungeonMasterDiv'>
+            <!-- <button class="hochladOverlap">Hochlad</button> -->
+        </div>
     </div>
 
     <div id="utilityContainer">
-            <ul id="chatLog" class="messages"></ul>
-        <!-- <textarea id="chatLog" readonly="true"></textarea> -->
+        <ul id="chatLog" class="messages"></ul>
+    </div>
+
+    <div id='diceContainer'>
+        <div id='dice' class='chars'>
+            <img class="diceImage" src="d20.png">
+        </div>
     </div>
 
     <div id='nameContainer'>
@@ -34,9 +38,8 @@
     <div id='charContainer'>
     </div>
 
-    <div id='diceContainer'>
-    </div>
 </body>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
 <script type="text/javascript" src="dnd.js"></script>
 
