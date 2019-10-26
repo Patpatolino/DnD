@@ -1,9 +1,9 @@
 const form = document.querySelector("form");
 const input = document.querySelector(".input");
 const messages = document.querySelector(".messages");
-let promptName = prompt("Gib deinen Charakternamen ein:");
-console.log('Hihi, maximale zeichenanzahl 30 Mr. Fred');
-const username = promptName.substring(0, 30);
+let username = prompt("Gib deinen Charakternamen ein:");
+// console.log('Hihi, maximale zeichenanzahl 30 Mr. Fred');
+// const username = promptName.substring(0, 30);
 const socket = io();
 
 class Player {
