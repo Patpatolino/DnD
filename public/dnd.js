@@ -1,6 +1,14 @@
-const form = document.querySelector("form");
-const input = document.querySelector(".input");
-const messages = document.querySelector(".messages");
+//Chat
+const form = document.getElementById('chatForm');
+const input = document.getElementById('chatText');
+const messages = document.getElementById('chatlog');
+
+//Quest
+const questForm = document.getElementById('questForm');
+const questInput = document.getElementById('questInput');
+const questlog = document.getElementById('questlog');
+
+//login prompt
 let promptName = prompt("Gib deinen Charakternamen ein:");
 console.log('Hihi, maximale zeichenanzahl 30 Mr. Fred');
 const username = promptName.substring(0, 30);
@@ -29,23 +37,18 @@ class Player {
     charImage(name) {
         let charDiv = document.createElement('div');
         charDiv.setAttribute('class', 'chars background');
-        charDiv.setAttribute('id', name+'_image');
-        charDiv.style.backgroundImage = "url('character.png')";
+        charDiv.setAttribute('id', name + '_image');
+        charDiv.style.backgroundImage = "url('/images/character.png')";
         charDiv.style.backgroundSize = 'cover';
         charDiv.style.backgroundRepeat = 'no-repeat';
         document.getElementById('charContainer').appendChild(charDiv);
-
-        // let hoverUploadBtn = document.createElement('button');
-        // hoverUploadBtn.setAttribute('class', 'hochladOverlap');
-        // hoverUploadBtn.setAttribute('id', 'hoverUploadBtn');
-        // hoverUploadBtn.innerHTML = 'Hochlad';
-        // charDiv.appendChild(hoverUploadBtn);
     }
 }
 
 createDice();
 
 //Sockets
+//Chat
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -59,6 +62,22 @@ form.addEventListener("submit", function (event) {
     return false;
 }, false);
 
+//Quest
+questForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    //local
+    addQuest(questInput.value);
+
+    //socket
+    socket.emit("questlog", {
+        message: questInput.value
+    });
+
+    questInput.value = "";
+    return false;
+}, false);
+
 socket.on("chat_message", function (data) {
     addMessage(data.username + ": " + data.message);
 });
@@ -66,6 +85,10 @@ socket.on("chat_message", function (data) {
 socket.on("roll", function (data) {
     addMessage(data.username + data.message);
 });
+
+socket.on("questlog", function (data) {
+    addQuest(data.message);
+})
 
 socket.on("user_join", function (data) {
     addMessage("Grüße " + data + "!");
@@ -91,7 +114,13 @@ function addMessage(message) {
     const li = document.createElement("li");
     li.innerHTML = message;
     messages.appendChild(li);
-    document.getElementById("chatLog").scrollTop = document.getElementById("chatLog").scrollHeight;
+    messages.scrollTop = messages.scrollHeight;
+}
+
+function addQuest(message) {
+    let li = document.createElement("li");
+    li.innerHTML = message;
+    questlog.appendChild(li);
 }
 
 function createDice() {
@@ -128,3 +157,35 @@ function rollDice(number) {
     number = Math.floor(Math.random() * number) + 1;
     return number;
 }
+
+
+
+
+// (function () {
+
+//     var todo = document.querySelector('#questLog'),
+//         form = document.querySelector('#questForm'),
+//         field = document.querySelector('#newitem');
+
+//     form.addEventListener('submit', function (ev) {
+//         var text = field.value;
+//         if (text !== '') {
+//             todo.innerHTML += '<li>' + text + '</li>';
+//             field.value = '';
+//             field.focus();
+//         }
+//         ev.preventDefault();
+//     }, false);
+
+//     todo.addEventListener('click', function (ev) {
+//         var t = ev.target;
+//         if (t.tagName === 'LI') {
+//             if (t.classList.contains('done')) {
+//                 t.parentNode.removeChild(t);
+//             } else {
+//                 t.classList.add('done');
+//             }
+//         };
+//         ev.preventDefault();
+//     }, false);
+// })();

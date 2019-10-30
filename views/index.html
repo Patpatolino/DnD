@@ -10,10 +10,9 @@
 </head>
 
 <body id="home">
-
-    <form>
-        <input type="text" class="input" autocomplete="off" maxlength="50" autofocus />
-        <button>Send</button>
+    <form id="chatForm">
+        <input type="text" id="chatText" class="input" autocomplete="off" maxlength="50" autofocus />
+        <button id="chatSubmit">Send</button>
     </form>
 
     <div id='dungeonMasterContainer'>
@@ -23,12 +22,24 @@
     </div>
 
     <div id="utilityContainer">
-        <ul id="chatLog" class="messages"></ul>
+        <ul id="chatlog" class="messages"></ul>
+
+        <div id="questDiv">
+            <ul id="questlog" class="quests"></ul>
+
+            <form id="questForm" action="#">
+                <div>
+                    <input type="text" id="questInput" class="input" autocomplete="off" maxlength="50" autofocus />
+                    <button id="questSubmit">Send</button>
+                </div>
+            </form>
+        </div>
+
     </div>
 
     <div id='diceContainer'>
         <div id='dice' class='chars'>
-            <img class="diceImage" src="d20.png">
+            <img class="diceImage" src="/images/d20.png">
         </div>
     </div>
 

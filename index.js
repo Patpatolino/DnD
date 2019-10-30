@@ -37,6 +37,11 @@ io.on('connection', (socket) => {
         socket.broadcast.emit("chat_message", data);
     });
 
+    socket.on("questlog", function (data) {
+        data.username = this.username;
+        socket.broadcast.emit("questlog", data);
+    });
+
     //Würfelergebnis an alle
     socket.on("roll", function (data) {
         data.username = this.username;
@@ -60,5 +65,6 @@ io.on('connection', (socket) => {
             playerList
         });
     });
+    
 
 })
