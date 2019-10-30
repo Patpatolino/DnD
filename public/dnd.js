@@ -78,6 +78,37 @@ questForm.addEventListener("submit", function (event) {
     return false;
 }, false);
 
+//delete quest
+function deleteQuest(ev){
+    let t = ev.target;
+    if (t.tagName === 'LI') {
+        if (t.classList.contains('done')) {
+            t.parentNode.removeChild(t);
+        } else {
+            t.classList.add('done');
+        }
+    };
+    ev.preventDefault;
+}
+
+questlog.addEventListener('click', function (ev) {
+    let t = ev.target;
+    if (t.tagName === 'LI') {
+        if (t.classList.contains('done')) {
+            t.parentNode.removeChild(t);
+            console.log('delte tes');
+        } else {
+            t.classList.add('done');
+        }
+    };
+    ev.preventDefault;
+}, false);
+
+socket.on("deleteQuest", function (data) {
+    console.log('delete');
+    deleteQuest(ev);
+});
+
 socket.on("chat_message", function (data) {
     addMessage(data.username + ": " + data.message);
 });
@@ -157,35 +188,3 @@ function rollDice(number) {
     number = Math.floor(Math.random() * number) + 1;
     return number;
 }
-
-
-
-
-// (function () {
-
-//     var todo = document.querySelector('#questLog'),
-//         form = document.querySelector('#questForm'),
-//         field = document.querySelector('#newitem');
-
-//     form.addEventListener('submit', function (ev) {
-//         var text = field.value;
-//         if (text !== '') {
-//             todo.innerHTML += '<li>' + text + '</li>';
-//             field.value = '';
-//             field.focus();
-//         }
-//         ev.preventDefault();
-//     }, false);
-
-//     todo.addEventListener('click', function (ev) {
-//         var t = ev.target;
-//         if (t.tagName === 'LI') {
-//             if (t.classList.contains('done')) {
-//                 t.parentNode.removeChild(t);
-//             } else {
-//                 t.classList.add('done');
-//             }
-//         };
-//         ev.preventDefault();
-//     }, false);
-// })();
