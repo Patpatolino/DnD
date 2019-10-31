@@ -12,15 +12,19 @@ questForm.addEventListener("submit", function (event) {
         message: questInput.value
     });
     questInput.value = "";
+
     return false;
 }, false);
 
-//TODO quest wird nur lokal gelöscht
-//TODO socket emit - socket on - socket on(server) - socket.broadcast
 questlog.addEventListener('click', function (ev) {
     event.preventDefault();
-    deleteQuest(ev); //self
-    socket.emit('deleteQuest', ev.target.id); //server
+    //Questlog wird sonst gelöscht
+    if (event.target.id === 'questlog') {
+        return;
+    } else {
+        deleteQuest(ev); //self
+        socket.emit('deleteQuest', ev.target.id); //server
+    }
 })
 
 socket.on("deleteQuest", function (ev) {

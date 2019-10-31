@@ -1,4 +1,4 @@
-//Chat
+//TODO socket emit - socket on - socket on(server) - socket.broadcast
 const form = document.getElementById('chatForm');
 const input = document.getElementById('chatText');
 const messages = document.getElementById('chatlog');
