@@ -43,8 +43,9 @@ io.on('connection', (socket) => {
     });
 
     socket.on("deleteQuest", function (data) {
-        data.username = this.username;
+        // data.username = this.username;
         socket.broadcast.emit("deleteQuest", data);
+        console.log('delete');
     });
 
     //Würfelergebnis an alle

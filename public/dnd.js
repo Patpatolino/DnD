@@ -3,15 +3,11 @@ const form = document.getElementById('chatForm');
 const input = document.getElementById('chatText');
 const messages = document.getElementById('chatlog');
 
-//Quest
-const questForm = document.getElementById('questForm');
-const questInput = document.getElementById('questInput');
-const questlog = document.getElementById('questlog');
-
 //login prompt
 let promptName = prompt("Gib deinen Charakternamen ein:");
 console.log('Hihi, maximale zeichenanzahl 30 Mr. Fred');
 const username = promptName.substring(0, 30);
+
 const socket = io();
 
 class Player {
@@ -62,64 +58,13 @@ form.addEventListener("submit", function (event) {
     return false;
 }, false);
 
-//Quest
-questForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    //local
-    addQuest(questInput.value);
-
-    //socket
-    socket.emit("questlog", {
-        message: questInput.value
-    });
-
-    questInput.value = "";
-    return false;
-}, false);
-
-//delete quest
-function deleteQuest(ev){
-    let t = ev.target;
-    if (t.tagName === 'LI') {
-        if (t.classList.contains('done')) {
-            t.parentNode.removeChild(t);
-        } else {
-            t.classList.add('done');
-        }
-    };
-    ev.preventDefault;
-}
-
-questlog.addEventListener('click', function (ev) {
-    let t = ev.target;
-    if (t.tagName === 'LI') {
-        if (t.classList.contains('done')) {
-            t.parentNode.removeChild(t);
-            console.log('delte tes');
-        } else {
-            t.classList.add('done');
-        }
-    };
-    ev.preventDefault;
-}, false);
-
-socket.on("deleteQuest", function (data) {
-    console.log('delete');
-    deleteQuest(ev);
-});
-
 socket.on("chat_message", function (data) {
-    addMessage(data.username + ": " + data.message);
+    addMessage(data.username + ": "+ data.message);
 });
 
 socket.on("roll", function (data) {
     addMessage(data.username + data.message);
 });
-
-socket.on("questlog", function (data) {
-    addQuest(data.message);
-})
 
 socket.on("user_join", function (data) {
     addMessage("Grüße " + data + "!");
@@ -146,12 +91,6 @@ function addMessage(message) {
     li.innerHTML = message;
     messages.appendChild(li);
     messages.scrollTop = messages.scrollHeight;
-}
-
-function addQuest(message) {
-    let li = document.createElement("li");
-    li.innerHTML = message;
-    questlog.appendChild(li);
 }
 
 function createDice() {
