@@ -1,6 +1,7 @@
 const questForm = document.getElementById('questForm');
 const questInput = document.getElementById('questInput');
 const questlog = document.getElementById('questlog');
+let questList = [];
 
 questForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -16,17 +17,13 @@ questForm.addEventListener("submit", function (event) {
 
 //TODO quest wird nur lokal gelöscht
 //TODO socket emit - socket on - socket on(server) - socket.broadcast
-questlog.addEventListener('click', function(ev){
+questlog.addEventListener('click', function (ev) {
     event.preventDefault();
-    console.log(ev);
-    // socket.emit('deleteQuest', ev, console.log('deletequest emit'));
-    socket.emit('deleteQuest', ev);
-
-    // socket.on('deleteQuest', socket.emit('deleteQuest', deleteQuest(ev)));
-    // deleteQuest(ev);
+    deleteQuest(ev); //self
+    socket.emit('deleteQuest', ev.target.id); //server
 })
 
-socket.on("deleteQuest", function (ev){
+socket.on("deleteQuest", function (ev) {
     deleteQuest(ev);
 })
 
@@ -35,20 +32,32 @@ socket.on("questlog", function (data) {
 })
 
 function addQuest(message) {
+    let i = 0;
+    while (i < questList.length) {
+        i++;
+    }
     let li = document.createElement("li");
     li.innerHTML = message;
+    li.setAttribute('id', 'li_' + i);
+    questList.push(li);
     questlog.appendChild(li);
+    console.log("questlog nachm adden: " + questList);
 }
 
 function deleteQuest(ev) {
-    let t = ev.prototype.target;
-    if (t.tagName === 'LI') {
-        if (t.classList.contains('done')) {
-            t.parentNode.removeChild(t);
-            console.log('Funktion DeleteQuest');
-        } else {
-            t.classList.add('done');
+    let t;
+    //Weirder code weil man dem socket kein mouseevent übergeben kann
+    if (typeof ev !== 'string') {
+        t = ev.target.id;
+        document.getElementById('' + t).remove();
+    } else {
+        t = ev;
+        document.getElementById('' + t).remove();
+    }
+    for (let i = 0; i < questList.length; i++) {
+        if (questList[i].id === t) {
+            questList.splice(i, 1);
         }
-    };
-    ev.preventDefault;
+    }
+    // console.log('list nachm löschen: ' + questList);
 }
