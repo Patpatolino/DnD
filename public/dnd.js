@@ -5,7 +5,6 @@ const messages = document.getElementById('chatlog');
 
 //login prompt
 let promptName = prompt("Gib deinen Charakternamen ein:");
-console.log('Hihi, maximale zeichenanzahl 30 Mr. Fred');
 const username = promptName.substring(0, 30);
 
 const socket = io();
@@ -59,7 +58,7 @@ form.addEventListener("submit", function (event) {
 }, false);
 
 socket.on("chat_message", function (data) {
-    addMessage(data.username + ": "+ data.message);
+    addMessage(data.username + ": " + data.message);
 });
 
 socket.on("roll", function (data) {
@@ -94,34 +93,17 @@ function addMessage(message) {
 }
 
 function createDice() {
-    let dropDown = document.createElement('div');
-    dropDown.setAttribute('class', 'dropdown');
-    let dropbtn = document.createElement('button');
-    dropbtn.setAttribute('class', 'dropbtn');
-    dropDown.appendChild(dropbtn);
-    let dropDownContent = document.createElement('div');
-    dropDownContent.setAttribute('class', 'dropdown-content');
-    dropDown.appendChild(dropDownContent);
-    document.getElementById('dice').appendChild(dropDown);
-
-    let diceList = [20, 6, 8, 10, 12, 100];
-    for (let i = 0; i < diceList.length; i++) {
-        let a = document.createElement('a');
-        a.setAttribute('href', '#');
-        a.innerHTML = diceList[i];
-        a.setAttribute('id', 'dice' + i);
-        dropDownContent.appendChild(a);
-        let diceButton = document.getElementById('dice' + i);
-        diceButton.addEventListener('click', function () {
-            let diceEyes = this.innerHTML;
-            let rollResult = rollDice(diceEyes);
-
+    let diceList = [4, 6, 8, 10, 12, 20];
+    for (i = 0; i < diceList.length; i++) {
+        const diceEyes = diceList[i];
+        document.getElementById('d' + diceEyes).addEventListener('click', function () {
+            const rollResult = rollDice(diceEyes);
             socket.emit("roll", {
                 message: " würfelt " + rollResult + " (d" + diceEyes + ")" + "\n"
             });
-        });
-    };
-};
+        })
+    }
+}
 
 function rollDice(number) {
     number = Math.floor(Math.random() * number) + 1;

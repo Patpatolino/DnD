@@ -168,6 +168,15 @@ body {
     padding-top: 25px;
 }
 
+.dice {
+    position: relative;
+    display: flex;
+    height: 75px;
+    width: 75px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 /* Dropdown Button */
 .dropbtn {
     color: white;
@@ -267,10 +276,11 @@ body {
     position: absolute;
     right: 5px;    
   }
+/*   
   #questlog li.done:hover:after {
     content: 'x';
     font-weight: bold;
     color: #c00;
     position: absolute;
     right: 5px;    
-  }
+  } */
