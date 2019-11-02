@@ -58,7 +58,7 @@ form.addEventListener("submit", function (event) {
 }, false);
 
 socket.on("chat_message", function (data) {
-    addMessage(data.username + ": " + data.message);
+    addMessage("<b>" + data.username + "</b>"+ ": " + data.message);
 });
 
 socket.on("roll", function (data) {
