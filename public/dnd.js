@@ -73,7 +73,7 @@ socket.on("user_leave", function (data) {
     addMessage("Gehabt Euch Wohl, " + "<b>" + data + "</b>" + "!");
 });
 
-addMessage("Grüße " + username + ".");
+addMessage("Grüße " + "<b>" + username + "</b>" + ".");
 socket.emit("user_join", username);
 
 //wenn jemand joined wird das playerlist array angeschaut und auf der basis die spielerklassen erzeugt

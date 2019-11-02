@@ -2,9 +2,9 @@ body {
     margin: 0;
     font-family: sans-serif;
     background: rgb(87, 87, 87);
-    /* background-image: url("/images/forrest.jpg");
+    background-image: url("/images/defaultBackground.jpg");
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
 }
 
 #chatForm {
@@ -324,19 +324,47 @@ body {
     right: 5px;
 }
 
-#showQuestlog {
+/* #showQuestlog {
     height: 100px;
     width: 100px;
     background: url(images/scroll.png);
     background-repeat: no-repeat;
     background-size: cover;
+} */
+
+.showQuestlog {
+    position: relative;
+    display: flex;
+    height: 75px;
+    width: 75px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-/*   
-  #questlog li.done:hover:after {
-    content: 'x';
-    font-weight: bold;
-    color: #c00;
+.showQuestlog:hover .overlay {
+    opacity: 1;
+}
+
+.diceImage {
+    display: block;
+}
+
+.overlay {
     position: absolute;
-    right: 5px;    
-  } */
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.dice:hover .overlay {
+    opacity: 1;
+}
+
+.hoverText {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
