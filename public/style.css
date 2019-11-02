@@ -29,8 +29,7 @@ body {
 
 #chatForm button {
     width: 6rem;
-    background-color: #1b8c00;
-    color: white;
+    background-color: #efece7;
     border: none;
     padding: 0.5rem;
     cursor: pointer;
@@ -39,7 +38,7 @@ body {
 }
 
 #chatForm button:hover {
-    background-color: #166d01;
+    background-color: #e9d9be;
 }
 
 .messages {
@@ -59,7 +58,7 @@ body {
 }
 
 .messages li:nth-child(odd) {
-    background: #eee;
+    background: #ebe1d1
 }
 
 
@@ -99,6 +98,8 @@ body {
 
 #chatlog {
     scrollbar-width: none;
+    background: #efece7;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 #chatlog::-webkit-scrollbar {
@@ -173,8 +174,8 @@ body {
     display: flex;
     height: 75px;
     width: 75px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* Dropdown Button */
@@ -231,51 +232,86 @@ body {
     /* background-image: url(images/questlog.png);
     background-size: cover;
     background-repeat: no-repeat; */
-    background:white;
+    background: white;
     font-family: 'Montserrat', sans-serif;
     height: 250px;
     width: 300px;
     resize: none;
     margin-left: 25px;
-    padding: 0;
     border: 1px solid #ccc !important;
     border-radius: 16px;
     overflow: auto;
 }
 
 #questForm {
-    width: 280px;
-    background: #333;
-    color: #fff;
-    border-radius: 5px;
-    padding: 5px 10px;
-  }
-  #newitem {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0.25rem;
+
+}
+
+#questForm input {
+    border: 0;
+    padding: 0.5rem;
+    outline: 0;
+    border-radius: 0.25rem;
+    background: #ccc;
+
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+}
+
+#questForm button {
+    margin-left: 10px;
+    width: 6rem;
+    background-color: #efece7;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+#questForm button:hover {
+    background-color: #e9d9be;
+}
+
+#newitem {
     width: 160px;
-  }
-  #questlog {
+}
+
+#questlog {
     width: 280px;
     margin: 10px solid;
     margin: 10px 10px;
-  }
-  #questlog li {
+    padding-left: 25px;
+    background: #efece7;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+#questlog li {
     border-radius: 2px;
-    list-style: none;
-    background: #eee;
+    list-style-type: disc;
     padding: 5px 10px;
     margin-bottom: 5px;
     position: relative;
-  }
-  #questlog li:nth-child(2n){
-    background: #ccc;
-  }
-  #questlog li:hover:after,
-  #questlog li.done:after {
+}
+
+#questlog li:nth-child(2n) {
+    background: #ebe1d1
+}
+
+#questlog li:hover:after,
+#questlog li.done:after {
     content: '✔';
     color: #060;
     position: absolute;
-    right: 5px;    
-  }
+    right: 5px;
+}
+
 /*   
   #questlog li.done:hover:after {
     content: 'x';
