@@ -47,7 +47,7 @@ createDice();
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    addMessage(username + ": " + input.value);
+    addMessage("<b>" + username + "</b>" + ": " + input.value);
 
     socket.emit("chat_message", {
         message: input.value
@@ -62,15 +62,15 @@ socket.on("chat_message", function (data) {
 });
 
 socket.on("roll", function (data) {
-    addMessage(data.username + data.message);
+    addMessage("<b>" + data.username + "</b>" + data.message);
 });
 
 socket.on("user_join", function (data) {
-    addMessage("Grüße " + data + "!");
+    addMessage("Grüße " + "<b>" + data + "</b>" + "!");
 });
 
 socket.on("user_leave", function (data) {
-    addMessage("Gehabt Euch Wohl, " + data + "!");
+    addMessage("Gehabt Euch Wohl, " + "<b>" + data + "</b>" + "!");
 });
 
 addMessage("Grüße " + username + ".");
@@ -99,7 +99,7 @@ function createDice() {
         document.getElementById('d' + diceEyes).addEventListener('click', function () {
             const rollResult = rollDice(diceEyes);
             socket.emit("roll", {
-                message: " würfelt " + rollResult + " (d" + diceEyes + ")" + "\n"
+                message: " würfelt " + "<b>" + rollResult + "</b>" + " (d" + diceEyes + ")" + "\n"
             });
         })
     }

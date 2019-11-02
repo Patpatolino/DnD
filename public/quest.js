@@ -45,7 +45,6 @@ function addQuest(message) {
     li.setAttribute('id', 'li_' + i);
     questList.push(li);
     questlog.appendChild(li);
-    console.log("questlog nachm adden: " + questList);
 }
 
 function deleteQuest(ev) {
@@ -63,5 +62,4 @@ function deleteQuest(ev) {
             questList.splice(i, 1);
         }
     }
-    // console.log('list nachm löschen: ' + questList);
 }

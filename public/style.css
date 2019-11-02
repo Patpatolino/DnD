@@ -43,8 +43,8 @@ body {
 
 .messages {
     font-family: 'Montserrat', sans-serif;
-    height: 250px;
-    width: 500px;
+    height: 300px;
+    width: 700px;
     resize: none;
     margin: 0;
     padding: 0;
@@ -227,18 +227,26 @@ body {
     background-color: #3e8e41;
 }
 
+#closeQuestlog {
+    z-index: 2;
+    position: absolute;
+    right: 15px;
+    top: -35px;
+    width: 6rem;
+    background-color: #efece7;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
 .quests {
-    /* right:15%; */
-    /* background-image: url(images/questlog.png);
-    background-size: cover;
-    background-repeat: no-repeat; */
     background: white;
     font-family: 'Montserrat', sans-serif;
     height: 250px;
-    width: 300px;
     resize: none;
-    margin-left: 25px;
-    border: 1px solid #ccc !important;
     border-radius: 16px;
     overflow: auto;
 }
@@ -283,18 +291,22 @@ body {
     width: 160px;
 }
 
+#questDiv {
+    /* display:none; */
+    position: absolute;
+    right: 10%;
+}
+
 #questlog {
     width: 280px;
-    margin: 10px solid;
+    height: 500px;
     margin: 10px 10px;
-    padding-left: 25px;
     background: #efece7;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 #questlog li {
-    border-radius: 2px;
-    list-style-type: disc;
+    list-style-image: url('/images/dragon.png');
     padding: 5px 10px;
     margin-bottom: 5px;
     position: relative;
@@ -310,6 +322,14 @@ body {
     color: #060;
     position: absolute;
     right: 5px;
+}
+
+#showQuestlog {
+    height: 100px;
+    width: 100px;
+    background: url(images/scroll.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /*   

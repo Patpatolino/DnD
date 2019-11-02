@@ -11,7 +11,8 @@
 
 <body id="home">
     <form id="chatForm">
-        <input type="text" id="chatText" class="input" autocomplete="off" maxlength="100" autofocus placeholder="Schreib hier eine Chatnachricht"/>
+        <input type="text" id="chatText" class="input" autocomplete="off" maxlength="100" autofocus
+            placeholder="Schreib hier eine Chatnachricht" />
         <button id="chatSubmit">Send</button>
     </form>
 
@@ -25,13 +26,16 @@
         <ul id="chatlog" class="messages"></ul>
 
         <div id="questDiv">
+            <button id="closeQuestlog">close</button>
             <ul id="questlog" class="quests" readonly></ul>
 
             <form id="questForm" action="#">
-                    <input type="text" id="questInput" class="input" autocomplete="off" maxlength="100" autofocus placeholder="Quest hinzufügen"/>
-                    <button id="questSubmit">Add</button>
+                <input type="text" id="questInput" class="input" autocomplete="off" maxlength="100" autofocus
+                    placeholder="Quest hinzufügen" />
+                <button id="questSubmit">Add</button>
             </form>
         </div>
+
 
     </div>
 
@@ -39,20 +43,23 @@
         <div id='d4' class='dice' value='4'>
             <img class="diceImage" src="/images/d4.png">
         </div>
-        <div id='d6' class='dice'  value='6'>
+        <div id='d6' class='dice' value='6'>
             <img class="diceImage" src="/images/d6.png">
         </div>
-        <div id='d8' class='dice'  value='8'>
+        <div id='d8' class='dice' value='8'>
             <img class="diceImage" src="/images/d8.png">
         </div>
-        <div id='d10' class='dice'  value='10'>
+        <div id='d10' class='dice' value='10'>
             <img class="diceImage" src="/images/d10.png">
         </div>
-        <div id='d12' class='dice'  value='12'>
+        <div id='d12' class='dice' value='12'>
             <img class="diceImage" src="/images/d12.png">
         </div>
-        <div id='d20' class='dice'  value='20'>
+        <div id='d20' class='dice' value='20'>
             <img class="diceImage" src="/images/d20.png">
+        </div>
+        <div id="showQuestlog">
+
         </div>
 
     </div>
@@ -67,6 +74,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
 <script type="text/javascript" src="prompt.js"></script>
+<script type="text/javascript" src="display.js"></script>
 <script type="text/javascript" src="dnd.js"></script>
 <script type="text/javascript" src="quest.js"></script>
 
