@@ -10,89 +10,97 @@
 </head>
 
 <body id="home">
-    <form id="chatForm">
-        <input type="text" id="chatText" class="input" autocomplete="off" maxlength="100" autofocus
-            placeholder="Schreib hier eine Chatnachricht" />
-        <button id="chatSubmit">Send</button>
-    </form>
-
-    <div id='dungeonMasterContainer'>
-        <div id='dungeonMasterDiv'>
-            <!-- <button class="hochladOverlap">Hochlad</button> -->
-        </div>
+    <div id="login">
+            <input type="text" id="loginInput" class="input" autocomplete="off" maxlength="100" autofocus
+                placeholder="Schreib hier eine Chatnachricht" />
+            <button id="loginButton">Send</button>
     </div>
+    <div id="dnd">
 
-    <div id="utilityContainer">
-        <ul id="chatlog" class="messages"></ul>
+        <form id="chatForm">
+            <input type="text" id="chatText" class="input" autocomplete="off" maxlength="100" autofocus
+                placeholder="Schreib hier eine Chatnachricht" />
+            <button id="chatSubmit">Send</button>
+        </form>
 
-        <div id="questDiv">
-            <button id="closeQuestlog">close</button>
-            <ul id="questlog" class="quests" readonly></ul>
-
-            <form id="questForm" action="#">
-                <input type="text" id="questInput" class="input" autocomplete="off" maxlength="100" autofocus
-                    placeholder="Quest hinzufügen" />
-                <button id="questSubmit">Add</button>
-            </form>
-        </div>
-    </div>
-
-    <div id='diceContainer'>
-        <div id='d4' class='dice' value='4'>
-            <img class="diceImage" src="/images/d4.png">
-            <div class="overlay">
-                <div class="hoverText">d4</div>
-            </div>
-        </div>
-        <div id='d6' class='dice' value='6'>
-            <img class="diceImage" src="/images/d6.png">
-            <div class="overlay">
-                <div class="hoverText">d6</div>
-            </div>
-        </div>
-        <div id='d8' class='dice' value='8'>
-            <img class="diceImage" src="/images/d8.png">
-            <div class="overlay">
-                <div class="hoverText">d8</div>
-            </div>
-        </div>
-        <div id='d10' class='dice' value='10'>
-            <img class="diceImage" src="/images/d10.png">
-            <div class="overlay">
-                <div class="hoverText">d10</div>
-            </div>
-        </div>
-        <div id='d12' class='dice' value='12'>
-            <img class="diceImage" src="/images/d12.png">
-            <div class="overlay">
-                <div class="hoverText">d12</div>
-            </div>
-        </div>
-        <div id='d20' class='dice' value='20'>
-            <img class="diceImage" src="/images/d20.png">
-            <div class="overlay">
-                <div class="hoverText">d20</div>
-            </div>
-        </div>
-        <div id="showQuestlog" class='showQuestlog'>
-            <img class="diceImage" src="/images/scroll.png">
-            <div class="overlay">
-                <div class="hoverText">Questlog</div>
+        <div id='dungeonMasterContainer'>
+            <div id='dungeonMasterDiv'>
+                <!-- <button class="hochladOverlap">Hochlad</button> -->
             </div>
         </div>
 
-    </div>
+        <div id="utilityContainer">
+            <ul id="chatlog" class="messages"></ul>
 
-    <div id='nameContainer'>
-    </div>
+            <div id="questDiv">
+                <button id="closeQuestlog">close</button>
+                <ul id="questlog" class="quests" readonly></ul>
 
-    <div id='charContainer'>
+                <form id="questForm" action="#">
+                    <input type="text" id="questInput" class="input" autocomplete="off" maxlength="100" autofocus
+                        placeholder="Quest hinzufügen" />
+                    <button id="questSubmit">Add</button>
+                </form>
+            </div>
+        </div>
+
+        <div id='diceContainer'>
+            <div id='d4' class='dice' value='4'>
+                <img class="diceImage" src="/images/d4.png">
+                <div class="overlay">
+                    <div class="hoverText">d4</div>
+                </div>
+            </div>
+            <div id='d6' class='dice' value='6'>
+                <img class="diceImage" src="/images/d6.png">
+                <div class="overlay">
+                    <div class="hoverText">d6</div>
+                </div>
+            </div>
+            <div id='d8' class='dice' value='8'>
+                <img class="diceImage" src="/images/d8.png">
+                <div class="overlay">
+                    <div class="hoverText">d8</div>
+                </div>
+            </div>
+            <div id='d10' class='dice' value='10'>
+                <img class="diceImage" src="/images/d10.png">
+                <div class="overlay">
+                    <div class="hoverText">d10</div>
+                </div>
+            </div>
+            <div id='d12' class='dice' value='12'>
+                <img class="diceImage" src="/images/d12.png">
+                <div class="overlay">
+                    <div class="hoverText">d12</div>
+                </div>
+            </div>
+            <div id='d20' class='dice' value='20'>
+                <img class="diceImage" src="/images/d20.png">
+                <div class="overlay">
+                    <div class="hoverText">d20</div>
+                </div>
+            </div>
+            <div id="showQuestlog" class='showQuestlog'>
+                <img class="diceImage" src="/images/scroll.png">
+                <div class="overlay">
+                    <div class="hoverText">Questlog</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id='nameContainer'>
+        </div>
+
+        <div id='charContainer'>
+        </div>
     </div>
 
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
-<script type="text/javascript" src="prompt.js"></script>
+<!-- <script type="text/javascript" src="prompt.js"></script> -->
 <script type="text/javascript" src="display.js"></script>
 <script type="text/javascript" src="dnd.js"></script>
 <script type="text/javascript" src="quest.js"></script>

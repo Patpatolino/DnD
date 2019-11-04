@@ -7,6 +7,13 @@ body {
     background-size: cover;
 }
 
+#login{
+    display:block;
+}
+#dnd {
+    display:none;
+}
+
 #chatForm {
     position: fixed;
     bottom: 0;
