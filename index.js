@@ -12,17 +12,20 @@ server = app.listen(3000);
 const io = require("socket.io")(server);
 
 //SpielerListe fürs Namen Array
-let playerList = [];
+let playerList = [{}];
 
 io.on('connection', (socket) => {
     console.log('New user connected');
 
-    socket.on("user_join", function (data) {
+    socket.on("user_join", function (data, klasse ) {
         this.username = data;
+        // this.klasse = klasse;
         socket.broadcast.emit("user_join", data);
 
         //Name ins Array und an alle pushen
-        playerList.push(this.username);
+        let playerObject = {data,klasse};
+        console.log(playerObject);
+        playerList.push(playerObject);
         socket.emit("showPlayers", {
             playerList
         });
@@ -58,9 +61,10 @@ io.on('connection', (socket) => {
     socket.on("disconnect", function (data) {
         socket.broadcast.emit("user_leave", this.username);
 
+        // console.log(playerList);
         //Name aus Array und an alle senden
-        for (i = 0; i < playerList.length; i++) {
-            if (playerList[i] === this.username) {
+        for (i = 1; i < playerList.length; i++) {
+            if (playerList[i].data === this.username) {
                 playerList.splice(i, 1);
             }
         }

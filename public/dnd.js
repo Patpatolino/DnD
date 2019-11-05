@@ -1,10 +1,20 @@
 //TODO socket emit - socket on - socket on(server) - socket.broadcast
+//LoginDiv, danach wird erst die seite geladen mit username
+const login = document.getElementById('loginButton').addEventListener('click', function () {
 
-const loginbtn = document.getElementById('loginButton').addEventListener('click', function () {
-
-    console.log('test');
     const username = document.getElementById('loginInput').value;
-    dnd(username);
+    let klasse = "";
+
+    var ele = document.getElementsByName('radio');
+    for (i = 0; i < ele.length; i++) {
+        if (ele[i].type = "radio") {
+            if (ele[i].checked) {
+                klasse = ele[i].value;
+            }
+        }
+    }
+    console.log('Start: '+username +' '+klasse);
+    dnd(username,klasse);
 });
 
 const form = document.getElementById('chatForm');
@@ -17,16 +27,16 @@ const messages = document.getElementById('chatlog');
 
 const socket = io();
 
-function dnd(username) {
+function dnd(username, klasse) {
     document.getElementById('login').style.display = 'none';
     document.getElementById('dnd').style.display = 'block';
 
     class Player {
 
-        constructor(name) {
+        constructor(name,klasse) {
             this.playerName = name;
             this.name(name);
-            this.charImage(name);
+            this.charImage(name,klasse);
         }
 
         static playerName(name) {
@@ -41,12 +51,12 @@ function dnd(username) {
             document.getElementById('nameContainer').appendChild(nameInput);
         }
 
-        charImage(name) {
+        charImage(name,klasse) {
             let charDiv = document.createElement('div');
             charDiv.setAttribute('class', 'chars background');
             charDiv.setAttribute('id', name + '_image');
-            charDiv.style.backgroundImage = "url('/images/character.png')";
-            charDiv.style.backgroundSize = 'cover';
+            charDiv.style.backgroundImage = "url('/images/"+klasse+".png')";
+            // charDiv.style.backgroundSize = 'cover';
             charDiv.style.backgroundRepeat = 'no-repeat';
             document.getElementById('charContainer').appendChild(charDiv);
         }
@@ -86,14 +96,16 @@ function dnd(username) {
     });
 
     addMessage("Grüße " + "<b>" + username + "</b>" + ".");
-    socket.emit("user_join", username);
+    socket.emit("user_join", username, klasse);
 
     //wenn jemand joined wird das playerlist array angeschaut und auf der basis die spielerklassen erzeugt
     socket.on("showPlayers", function (data) {
         document.getElementById('nameContainer').innerHTML = "";
         document.getElementById('charContainer').innerHTML = "";
-        for (i = 0; i < data.playerList.length; i++) {
-            let player = new Player(data.playerList[i]);
+        for (i = 1; i < data.playerList.length; i++) {
+            console.log(data.playerList);
+            console.log(data.playerList[i].data, data.playerList[i].klasse);
+            let player = new Player(data.playerList[i].data, data.playerList[i].klasse);
         }
     });
 
