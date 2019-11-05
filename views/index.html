@@ -10,62 +10,77 @@
 </head>
 
 <body id="home">
-    <div id="login">
-        <input type="text" id="loginInput" class="input" autocomplete="off" maxlength="100" autofocus
-            placeholder="Wie ist Ihr Name?" />
-        <p>Welche Klasse bist du?</p>
-        <label class="container">Barbarian
-            <input type="radio" name="radio" value="Barbarian">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Bard
-            <input type="radio" name="radio" value="Bard">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Cleric
-            <input type="radio" name="radio" value="Cleric">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Druid
-            <input type="radio" name="radio" value="Druid">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Monk
-            <input type="radio" name="radio" value="Monk">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Paladin
-            <input type="radio" name="radio" value="Paladin">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Ranger
-            <input type="radio" name="radio" value="Ranger">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Rogue
-            <input type="radio" name="radio" value="Rogue">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Sorcerer
-            <input type="radio" name="radio" value="Sorcerer">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Warlock
-            <input type="radio" name="radio" value="Warlock">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Wizard
-            <input type="radio" name="radio" value="Wizard">
-            <span class="checkmark"></span>
-        </label>
+    <div id="loginBody">
+        <div id="login">
+            <div id="divWelcome">
+                <p id="pWelcome">Dungeons and Dragons by PatPat</p>
+            </div>
+            <div id="divCharName">
+                    <p id="pCharName" class="loginQuestion">Wie ist Ihr Name?</p>
+                </div>
+            <div id="loginName">
+                <input type="text" id="loginInput" class="input" autocomplete="off" maxlength="100" required="required" autofocus/>
+            </div>
+            <div id="divQuestion">
+                <p id="pQuestion" class="loginQuestion">Welche Klasse bist du?</p>
+            </div>
+            <div id="loginRadio">
+                <label class="container">Barbarian
+                    <input type="radio" name="radio" value="Barbarian">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Bard
+                    <input type="radio" name="radio" value="Bard">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Cleric
+                    <input type="radio" name="radio" value="Cleric">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Druid
+                    <input type="radio" name="radio" value="Druid">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Monk
+                    <input type="radio" name="radio" value="Monk">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Paladin
+                    <input type="radio" name="radio" value="Paladin">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Ranger
+                    <input type="radio" name="radio" value="Ranger">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Rogue
+                    <input type="radio" name="radio" value="Rogue">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Sorcerer
+                    <input type="radio" name="radio" value="Sorcerer">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Warlock
+                    <input type="radio" name="radio" value="Warlock">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Wizard
+                    <input type="radio" name="radio" value="Wizard">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div id="loginSend">
+                <button id="loginButton">Send</button>
+            </div>
 
-        <button id="loginButton">Send</button>
-
+        </div>
     </div>
-    <div id="dnd">
+
+    <div id="dndBody">
 
         <form id="chatForm">
-            <input type="text" id="chatText" class="input" autocomplete="off" maxlength="100" autofocus
+            <input type="text" id="chatText" class="input" autocomplete="off" maxlength="100"
                 placeholder="Schreib hier eine Chatnachricht" />
             <button id="chatSubmit">Send</button>
         </form>
@@ -147,7 +162,6 @@
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
-<!-- <script type="text/javascript" src="prompt.js"></script> -->
 <script type="text/javascript" src="display.js"></script>
 <script type="text/javascript" src="dnd.js"></script>
 <script type="text/javascript" src="quest.js"></script>

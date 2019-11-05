@@ -1,21 +1,34 @@
 //TODO socket emit - socket on - socket on(server) - socket.broadcast
 //LoginDiv, danach wird erst die seite geladen mit username
-const login = document.getElementById('loginButton').addEventListener('click', function () {
+let login = start();
 
-    const username = document.getElementById('loginInput').value;
-    let klasse = "";
+function start() {
+    document.getElementById('loginButton').addEventListener('click', function () {
 
-    var ele = document.getElementsByName('radio');
-    for (i = 0; i < ele.length; i++) {
-        if (ele[i].type = "radio") {
-            if (ele[i].checked) {
-                klasse = ele[i].value;
+        if (document.getElementById('loginInput').value !== "") {
+            const username = document.getElementById('loginInput').value;
+            let klasse = "";
+
+            var ele = document.getElementsByName('radio');
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].type = "radio") {
+                    if (ele[i].checked) {
+                        klasse = ele[i].value;
+                    }
+                }
             }
+            console.log('Start: ' + username + ' ' + klasse);
+            dnd(username, klasse);
+        } else {
+            alert("name ausfüllen");
         }
-    }
-    console.log('Start: '+username +' '+klasse);
-    dnd(username,klasse);
-});
+    });
+
+}
+
+
+
+
 
 const form = document.getElementById('chatForm');
 const input = document.getElementById('chatText');
@@ -28,15 +41,15 @@ const messages = document.getElementById('chatlog');
 const socket = io();
 
 function dnd(username, klasse) {
-    document.getElementById('login').style.display = 'none';
-    document.getElementById('dnd').style.display = 'block';
+    document.getElementById('loginBody').style.display = 'none';
+    document.getElementById('dndBody').style.display = 'block';
 
     class Player {
 
-        constructor(name,klasse) {
+        constructor(name, klasse) {
             this.playerName = name;
             this.name(name);
-            this.charImage(name,klasse);
+            this.charImage(name, klasse);
         }
 
         static playerName(name) {
@@ -51,11 +64,11 @@ function dnd(username, klasse) {
             document.getElementById('nameContainer').appendChild(nameInput);
         }
 
-        charImage(name,klasse) {
+        charImage(name, klasse) {
             let charDiv = document.createElement('div');
             charDiv.setAttribute('class', 'chars background');
             charDiv.setAttribute('id', name + '_image');
-            charDiv.style.backgroundImage = "url('/images/"+klasse+".png')";
+            charDiv.style.backgroundImage = "url('/images/" + klasse + ".png')";
             // charDiv.style.backgroundSize = 'cover';
             charDiv.style.backgroundRepeat = 'no-repeat';
             document.getElementById('charContainer').appendChild(charDiv);
