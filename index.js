@@ -24,7 +24,7 @@ io.on('connection', (socket) => {
 
         //Name ins Array und an alle pushen
         let playerObject = {data,klasse};
-        console.log(playerObject);
+        // console.log(playerObject);
         playerList.push(playerObject);
         socket.emit("showPlayers", {
             playerList
@@ -48,7 +48,7 @@ io.on('connection', (socket) => {
     socket.on("deleteQuest", function (data) {
         // data.username = this.username;
         socket.broadcast.emit("deleteQuest", data);
-        console.log('delete');
+        // console.log('delete');
     });
 
     //Würfelergebnis an alle
@@ -56,6 +56,11 @@ io.on('connection', (socket) => {
         data.username = this.username;
         socket.emit("roll", data);
         socket.broadcast.emit("roll", data);
+    });
+
+    socket.on("upload", function (data){
+        socket.emit("upload", data);
+        socket.broadcast.emit("upload", data);
     });
 
     socket.on("disconnect", function (data) {

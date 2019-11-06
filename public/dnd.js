@@ -1,42 +1,36 @@
-//TODO socket emit - socket on - socket on(server) - socket.broadcast
-//LoginDiv, danach wird erst die seite geladen mit username
-let login = start();
+//TODO socket emit (schickts los an server) - socket on, emit/broadcast (server schickts zurück) - socket on js listened wieder
+const login = start();
 
 function start() {
     document.getElementById('loginButton').addEventListener('click', function () {
 
         if (document.getElementById('loginInput').value !== "") {
             const username = document.getElementById('loginInput').value;
-            let klasse = "";
+            if (username === "Gott") {
+                dnd(username);
+            } else {
+                let klasse = "";
 
-            var ele = document.getElementsByName('radio');
-            for (i = 0; i < ele.length; i++) {
-                if (ele[i].type = "radio") {
-                    if (ele[i].checked) {
-                        klasse = ele[i].value;
+                var ele = document.getElementsByName('radio');
+                for (i = 0; i < ele.length; i++) {
+                    if (ele[i].type = "radio") {
+                        if (ele[i].checked) {
+                            klasse = ele[i].value;
+                        }
                     }
                 }
+                // console.log('Start: ' + username + ' ' + klasse);
+                dnd(username, klasse);
             }
-            console.log('Start: ' + username + ' ' + klasse);
-            dnd(username, klasse);
         } else {
             alert("name ausfüllen");
         }
     });
-
 }
-
-
-
-
 
 const form = document.getElementById('chatForm');
 const input = document.getElementById('chatText');
 const messages = document.getElementById('chatlog');
-
-//login prompt
-// let promptName = prompt("Gib deinen Charakternamen ein:");
-// const username = promptName.substring(0, 30);
 
 const socket = io();
 
@@ -116,9 +110,11 @@ function dnd(username, klasse) {
         document.getElementById('nameContainer').innerHTML = "";
         document.getElementById('charContainer').innerHTML = "";
         for (i = 1; i < data.playerList.length; i++) {
-            console.log(data.playerList);
-            console.log(data.playerList[i].data, data.playerList[i].klasse);
-            let player = new Player(data.playerList[i].data, data.playerList[i].klasse);
+            // console.log(data.playerList);
+            // console.log(data.playerList[i].data, data.playerList[i].klasse);
+            if(data.playerList[i].data !== "Gott"){
+                let player = new Player(data.playerList[i].data, data.playerList[i].klasse);
+            }
         }
     });
 

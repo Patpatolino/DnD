@@ -16,10 +16,11 @@
                 <p id="pWelcome"><b><i>Dungeons & Dragons</b> <small>by PatPat</small></i></p>
             </div>
             <div id="divCharName">
-                    <p id="pCharName" class="loginQuestion">Wie ist Ihr Name?</p>
-                </div>
+                <p id="pCharName" class="loginQuestion">Wie ist Ihr Name?</p>
+            </div>
             <div id="loginName">
-                <input type="text" id="loginInput" class="input" autocomplete="off" maxlength="100" required="required" autofocus/>
+                <input type="text" id="loginInput" class="input" autocomplete="off" maxlength="100" required="required"
+                    autofocus />
             </div>
             <div id="divQuestion">
                 <p id="pQuestion" class="loginQuestion">Welche Klasse bist du?</p>
@@ -87,7 +88,8 @@
 
         <div id='dungeonMasterContainer'>
             <div id='dungeonMasterDiv'>
-                <!-- <button class="hochladOverlap">Hochlad</button> -->
+                <input type="text" class ="hochladOverlap" id="hochladInput" placeholder="url vom bild"/>
+                <button id="hochloadButton" class="hochladOverlap">Hochlad</button>
             </div>
         </div>
 
@@ -164,6 +166,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
 <script type="text/javascript" src="display.js"></script>
 <script type="text/javascript" src="dnd.js"></script>
+<script type="text/javascript" src="upload.js"></script>
 <script type="text/javascript" src="quest.js"></script>
 
 </html>

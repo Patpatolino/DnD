@@ -123,8 +123,6 @@ body {
     background: #ebe1d1
 }
 
-
-
 #dungeonMasterContainer {
     display: flex;
     flex-direction: row;
@@ -134,21 +132,19 @@ body {
 }
 
 #dungeonMasterDiv {
-    position: relative;
-    z-index: 1;
     display: flex;
-    flex-direction: row;
+    border-radius: 15px;
     justify-content: center;
-    height: 150px;
-    width: 150px;
-    background-image: url("/images/dm.png");
+    height: 200px;
+    width: 200px;
+    background-image: url(/images/dm.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-/* #dungeonMasterDiv:hover .hochladOverlap{
+#dungeonMasterDiv:hover .hochladOverlap{
     display: block;
-} */
+}
 
 #utilityContainer {
     display: flex;
@@ -204,15 +200,16 @@ body {
     margin-right: 20px;
 }
 
-/* .hochladOverlap {
-    position: absolute;
+.hochladOverlap {
+    /* position: absolute; */
     z-index: 2;
     display: none;
+    align-self: flex-end;
 }
 
 .chars:hover .hochladOverlap {
     display: block;
-} */
+}
 
 /* .background {
     background: grey;
