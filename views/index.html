@@ -80,24 +80,28 @@
 
     <div id="dndBody">
 
-        <form id="chatForm">
-            <input type="text" id="chatText" class="input" autocomplete="off" maxlength="100"
-                placeholder="Schreib hier eine Chatnachricht" />
-            <button id="chatSubmit">Send</button>
-        </form>
+
 
         <div id='dungeonMasterContainer'>
             <div id='dungeonMasterDiv'>
-                <input type="text" class ="hochladOverlap" id="hochladInput" placeholder="url vom bild"/>
+                <input type="text" class="hochladOverlap" id="hochladInput" placeholder="url vom bild" />
                 <button id="hochloadButton" class="hochladOverlap">Hochlad</button>
             </div>
         </div>
 
         <div id="utilityContainer">
-            <ul id="chatlog" class="messages"></ul>
+            <div>
+                <ul id="chatlog" class="messages"></ul>
+
+                <form id="chatForm">
+                    <input type="text" id="chatText" class="input" autocomplete="off" maxlength="100"
+                        placeholder="Schreib hier eine Chatnachricht" />
+                    <button id="chatSubmit">Send</button>
+                </form>
+            </div>
 
             <div id="questDiv">
-                <button id="closeQuestlog">close</button>
+                <button id="closeQuestlog"></button>
                 <ul id="questlog" class="quests" readonly></ul>
 
                 <form id="questForm" action="#">
