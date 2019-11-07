@@ -15,10 +15,10 @@ function switchVisible(div1) {
 let showQuestlogButton = document.getElementById('showQuestlog');
 
 showQuestlogButton.addEventListener('click', function(){
-    switchVisible(document.getElementById('questDiv'));
+    switchVisible(document.getElementById('questContainer'));
 })
 
 let closeQuestlogButton = document.getElementById('closeQuestlog');
 closeQuestlogButton.addEventListener('click', function(){
-    document.getElementById('questDiv').style.display = 'none';
+    document.getElementById('questContainer').style.display = 'none';
 })

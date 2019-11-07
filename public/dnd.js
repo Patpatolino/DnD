@@ -1,4 +1,5 @@
 //TODO socket emit (schickts los an server) - socket on, emit/broadcast (server schickts zurück) - socket on js listened wieder
+//TODO hintergrund ändern, vllt animate.css
 const login = start();
 
 function start() {

@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    height:100%;
+    height: 100%;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
     background: rgb(87, 87, 87);
@@ -9,15 +9,15 @@ body {
     background-size: cover;
 }
 
-#loginBody{
-    display:block;
-    display:flex;
+#loginBody {
+    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-#login{
+#login {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,32 +29,46 @@ body {
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
-#pWelcome{
+#pWelcome {
     font-size: 25px;
 }
 
-.loginQuestion{
+.headlineContainer {
+    display: flex;
+    border-bottom: 1.2px solid #ab9879;
+}
+
+.headline {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    margin-block-end: 0px;
+    margin-block-start: 3px;
+}
+
+.loginQuestion {
     font-weight: bold;
     font-size: 20px;
 }
 
-#loginName{
+#loginName {
     justify-content: center;
     display: flex;
 }
 
-#loginRadio{
+#loginRadio {
     display: flex;
     justify-content: center;
 }
 
-#loginSend{
+#loginSend {
     display: flex;
     justify-content: center;
     padding-top: 20px;
 }
 
-.container{
+.container {
     display: flex;
     padding-left: 5px;
     padding-right: 5px;
@@ -65,30 +79,26 @@ body {
 }
 
 #dndBody {
-    display:none;
+    display: none;
     height: 100vh;
 }
 
 #chatForm {
-    /* position: fixed;
-    bottom: 0;
-    left: 0; */
     width: 100%;
     display: flex;
-    box-sizing: border-box;
-    padding: 0.25rem;
-    
+    border-top: 1.2px solid #ab9879;
 }
 
 #chatForm input {
     border: 0;
-    padding: 0.5rem;
     width: 100%;
-    outline: 0;
-    margin-right: 0.5rem;
-    border-radius: 0.25rem;
+    text-indent: 5px;
+    /* margin-right: 0.5rem; */
+    border-right: 1.2px solid #ab9879;
+    border-bottom-left-radius: 16px !important;
+    /* border-bottom-left-radius: 16px; */
+    /* border-radius: 0.25rem; */
     background: #ebe1d1;
-    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.30), 0 0px 12px rgba(0, 0, 0, 0.22);
 }
 
 #chatForm button {
@@ -98,15 +108,15 @@ body {
     padding: 0.5rem;
     cursor: pointer;
     border-radius: 0.25rem;
+    border-bottom-right-radius: 16px;
     text-transform: uppercase;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 #chatForm button:hover {
     background-color: #e9d9be;
 }
 
-.messages {
+/* .messages {
     font-family: 'Montserrat', sans-serif;
     height: 300px;
     width: 700px;
@@ -116,7 +126,7 @@ body {
     border: 1px solid #ccc !important;
     border-radius: 16px;
     overflow: auto;
-}
+} */
 
 .messages li {
     padding: 0.5rem;
@@ -145,7 +155,7 @@ body {
     background-position: center;
 }
 
-#dungeonMasterDiv:hover .hochladOverlap{
+#dungeonMasterDiv:hover .hochladOverlap {
     display: block;
 }
 
@@ -157,10 +167,20 @@ body {
     padding-top: 25px;
 }
 
-#chatlog {
-    scrollbar-width: none;
+#chatContainer {
     background: #efece7;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
+}
+
+#chatlog {
+    scrollbar-width: none;
+    font-family: 'Montserrat', sans-serif;
+    height: 300px;
+    width: 700px;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
 }
 
 #chatlog::-webkit-scrollbar {
@@ -172,12 +192,10 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 25px;
 }
 
 .names {
-    /* display: flex; */
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'MedievalSharp', cursive;
     width: 100px;
     height: auto;
     margin-left: 20px;
@@ -228,7 +246,8 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 25px;
+    padding-top: 10px;
+    cursor: pointer;
 }
 
 .dice {
@@ -290,54 +309,51 @@ body {
 }
 
 #closeQuestlog {
-    z-index: 2;
-    position: absolute;
-    right: 0px;
     width: 30px;
     height: 30px;
-    top: -5px;
     border: none;
-    padding: 0.5rem;
     cursor: pointer;
     border-radius: 25px;
-    text-transform: uppercase;
+    background-color: transparent;
     background-image: url(/images/cancel.svg);
     background-repeat: no-repeat;
 }
 
-.quests {
+/* .quests {
     background: white;
     font-family: 'Montserrat', sans-serif;
     height: 250px;
     resize: none;
     border-radius: 16px;
     overflow: auto;
-}
+} */
 
 #questForm {
     display: flex;
-    justify-content: center;
-    box-sizing: border-box;
+    border-top: 1.2px solid #ab9879;
 }
 
 #questForm input {
     border: 0;
-    padding: 0.5rem;
-    outline: 0;
-    border-radius: 0.25rem;
+    width: 100%;
+    text-indent: 5px;
+    /* margin-right: 0.5rem; */
+    border-right: 1.2px solid #ab9879;
+    border-bottom-left-radius: 16px !important;
+    /* border-bottom-left-radius: 16px; */
+    /* border-radius: 0.25rem; */
     background: #ebe1d1;
-    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.30), 0 0px 12px rgba(0, 0, 0, 0.22);
 }
 
 #questForm button {
-    margin-left: 10px;
     width: 6rem;
     background-color: #ebe1d1;
     border: none;
+    padding: 0.5rem;
     cursor: pointer;
     border-radius: 0.25rem;
+    border-bottom-right-radius: 16px;
     text-transform: uppercase;
-    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.30), 0 0px 12px rgba(0, 0, 0, 0.22);
 }
 
 #questForm button:hover {
@@ -348,18 +364,27 @@ body {
     width: 160px;
 }
 
-#questDiv {
-    /* display:none; */
-    position: absolute;
+#questContainer {
+    background: #efece7;
+    z-index: 2;
     right: 10%;
+    position: absolute;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
 }
 
 #questlog {
     width: 280px;
     height: 500px;
-    margin: 10px 10px;
-    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.30), 0 0px 12px rgba(0, 0, 0, 0.22);
     background: #efece7;
+    scrollbar-width: none;
+    scrollbar-width: none;
+    font-family: 'Montserrat', sans-serif;
+    overflow: auto;
+}
+
+#questlog::-webkit-scrollbar {
+    display: none;
 }
 
 #questlog li {

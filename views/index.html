@@ -4,6 +4,7 @@
 <head id=''>
     <meta http-equiv="Content-Type" const="text/html;charset=UTF-8" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp&display=swap" rel="stylesheet">
     <!-- <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css"> -->
     <title>DnD by Patpat</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
@@ -90,7 +91,10 @@
         </div>
 
         <div id="utilityContainer">
-            <div>
+            <div id=chatContainer>
+                <div class="headlineContainer">
+                        <p class="headline">Chat</p>
+                </div>
                 <ul id="chatlog" class="messages"></ul>
 
                 <form id="chatForm">
@@ -100,8 +104,12 @@
                 </form>
             </div>
 
-            <div id="questDiv">
-                <button id="closeQuestlog"></button>
+            <div id="questContainer">
+                <div class="headlineContainer">
+                    <p class="headline">Questlog</p>
+                    <button id="closeQuestlog"></button>
+                </div>
+
                 <ul id="questlog" class="quests" readonly></ul>
 
                 <form id="questForm" action="#">
