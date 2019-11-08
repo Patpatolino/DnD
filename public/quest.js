@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const questForm = document.getElementById('questForm');
 const questInput = document.getElementById('questInput');
 const questlog = document.getElementById('questlog');

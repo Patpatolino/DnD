@@ -1,6 +1,6 @@
 //TODO socket emit (schickts los an server) - socket on, emit/broadcast (server schickts zurück) - socket on js listened wieder
 //TODO hintergrund ändern, vllt animate.css
-const login = start();
+start();
 
 function start() {
     document.getElementById('loginButton').addEventListener('click', function () {
@@ -13,8 +13,8 @@ function start() {
                 let klasse = "";
 
                 var ele = document.getElementsByName('radio');
-                for (i = 0; i < ele.length; i++) {
-                    if (ele[i].type = "radio") {
+                for (let i = 0; i < ele.length; i++) {
+                    if (ele[i].type === "radio") {
                         if (ele[i].checked) {
                             klasse = ele[i].value;
                         }
@@ -29,13 +29,14 @@ function start() {
     });
 }
 
-const form = document.getElementById('chatForm');
-const input = document.getElementById('chatText');
-const messages = document.getElementById('chatlog');
 
 const socket = io();
 
 function dnd(username, klasse) {
+    const form = document.getElementById('chatForm');
+    const input = document.getElementById('chatText');
+    const messages = document.getElementById('chatlog');
+
     document.getElementById('loginBody').style.display = 'none';
     document.getElementById('dndBody').style.display = 'block';
 
@@ -49,7 +50,7 @@ function dnd(username, klasse) {
 
         static playerName(name) {
             return name;
-        };
+        }
 
         name(name) {
             let nameInput = document.createElement('p');
@@ -61,7 +62,7 @@ function dnd(username, klasse) {
 
         charImage(name, klasse) {
             let charDiv = document.createElement('div');
-            charDiv.setAttribute('class', 'chars background');
+            charDiv.setAttribute('class', 'chars');
             charDiv.setAttribute('id', name + '_image');
             charDiv.style.backgroundImage = "url('/images/" + klasse + ".png')";
             // charDiv.style.backgroundSize = 'cover';
@@ -110,10 +111,10 @@ function dnd(username, klasse) {
     socket.on("showPlayers", function (data) {
         document.getElementById('nameContainer').innerHTML = "";
         document.getElementById('charContainer').innerHTML = "";
-        for (i = 1; i < data.playerList.length; i++) {
+        for (let i = 1; i < data.playerList.length; i++) {
             // console.log(data.playerList);
             // console.log(data.playerList[i].data, data.playerList[i].klasse);
-            if(data.playerList[i].data !== "Gott"){
+            if (data.playerList[i].data !== "Gott") {
                 let player = new Player(data.playerList[i].data, data.playerList[i].klasse);
             }
         }
@@ -128,7 +129,7 @@ function dnd(username, klasse) {
 
     function createDice() {
         let diceList = [4, 6, 8, 10, 12, 20];
-        for (i = 0; i < diceList.length; i++) {
+        for (let i = 0; i < diceList.length; i++) {
             const diceEyes = diceList[i];
             document.getElementById('d' + diceEyes).addEventListener('click', function () {
                 const rollResult = rollDice(diceEyes);

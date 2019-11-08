@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/views/index.html");
 });
 //Listen on port 3000
-server = app.listen(3000);
+const server = app.listen(3000);
 //socket.io instantiation
 const io = require("socket.io")(server);
 
@@ -63,12 +63,18 @@ io.on('connection', (socket) => {
         socket.broadcast.emit("upload", data);
     });
 
+    socket.on("changebackground", function (data){
+        socket.emit("changebackground", data);
+        socket.broadcast.emit("changebackground", data);
+    });
+
+    // eslint-disable-next-line no-unused-vars
     socket.on("disconnect", function (data) {
         socket.broadcast.emit("user_leave", this.username);
 
         // console.log(playerList);
         //Name aus Array und an alle senden
-        for (i = 1; i < playerList.length; i++) {
+        for (let i = 1; i < playerList.length; i++) {
             if (playerList[i].data === this.username) {
                 playerList.splice(i, 1);
             }

@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" const="text/html;charset=UTF-8" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <!-- <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css"> -->
     <title>DnD by Patpat</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
@@ -14,60 +15,60 @@
     <div id="loginBody">
         <div id="login">
             <div id="divWelcome">
-                <p id="pWelcome"><b><i>Dungeons & Dragons</b> <small>by PatPat</small></i></p>
+                <p id="pWelcome" class="headline"><b><i>Pen & Paper</b> <small>by PatPat</small></i></p>
             </div>
             <div id="divCharName">
-                <p id="pCharName" class="loginQuestion">Wie ist Ihr Name?</p>
+                <p id="pCharName" class="loginQuestion headline">Wie ist Ihr Name?</p>
             </div>
             <div id="loginName">
                 <input type="text" id="loginInput" class="input" autocomplete="off" maxlength="100" required="required"
                     autofocus />
             </div>
             <div id="divQuestion">
-                <p id="pQuestion" class="loginQuestion">Welche Klasse bist du?</p>
+                <p id="pQuestion" class="loginQuestion headline">Welche Klasse bist du?</p>
             </div>
             <div id="loginRadio">
-                <label class="container">Barbarian
+                <label class="container headline">Barbarian
                     <input type="radio" name="radio" value="Barbarian">
                     <span class="checkmark"></span>
                 </label>
-                <label class="container">Bard
+                <label class="container headline">Bard
                     <input type="radio" name="radio" value="Bard">
                     <span class="checkmark"></span>
                 </label>
-                <label class="container">Cleric
+                <label class="container headline">Cleric
                     <input type="radio" name="radio" value="Cleric">
                     <span class="checkmark"></span>
                 </label>
-                <label class="container">Druid
+                <label class="container headline">Druid
                     <input type="radio" name="radio" value="Druid">
                     <span class="checkmark"></span>
                 </label>
-                <label class="container">Monk
+                <label class="container headline">Monk
                     <input type="radio" name="radio" value="Monk">
                     <span class="checkmark"></span>
                 </label>
-                <label class="container">Paladin
+                <label class="container headline">Paladin
                     <input type="radio" name="radio" value="Paladin">
                     <span class="checkmark"></span>
                 </label>
-                <label class="container">Ranger
+                <label class="container headline">Ranger
                     <input type="radio" name="radio" value="Ranger">
                     <span class="checkmark"></span>
                 </label>
-                <label class="container">Rogue
+                <label class="container headline">Rogue
                     <input type="radio" name="radio" value="Rogue">
                     <span class="checkmark"></span>
                 </label>
-                <label class="container">Sorcerer
+                <label class="container headline">Sorcerer
                     <input type="radio" name="radio" value="Sorcerer">
                     <span class="checkmark"></span>
                 </label>
-                <label class="container">Warlock
+                <label class="container headline">Warlock
                     <input type="radio" name="radio" value="Warlock">
                     <span class="checkmark"></span>
                 </label>
-                <label class="container">Wizard
+                <label class="container headline">Wizard
                     <input type="radio" name="radio" value="Wizard">
                     <span class="checkmark"></span>
                 </label>
@@ -81,8 +82,6 @@
 
     <div id="dndBody">
 
-
-
         <div id='dungeonMasterContainer'>
             <div id='dungeonMasterDiv'>
                 <input type="text" class="hochladOverlap" id="hochladInput" placeholder="url vom bild" />
@@ -93,7 +92,7 @@
         <div id="utilityContainer">
             <div id=chatContainer>
                 <div class="headlineContainer">
-                        <p class="headline">Chat</p>
+                    <p class="headline">Chat</p>
                 </div>
                 <ul id="chatlog" class="messages"></ul>
 
@@ -171,6 +170,21 @@
 
         <div id='charContainer'>
         </div>
+
+        <div id="sidebar">
+            <div id="background_one" class="background animationhover">
+                <p>Default</p>
+            </div>
+            <div id="background_two" class="background animationhover">
+                <p>Forrest</p>
+            </div>
+            <div id="background_three" class="background animationhover">
+                <p>Tavern</p>
+            </div>
+            <div id="background_four" class="background animationhover">
+                <p>Dungeon</p>
+            </div>
+        </div>
     </div>
 
 </body>
@@ -180,5 +194,8 @@
 <script type="text/javascript" src="dnd.js"></script>
 <script type="text/javascript" src="upload.js"></script>
 <script type="text/javascript" src="quest.js"></script>
+<script type="text/javascript" src="backgrounds.js"></script>
+
+
 
 </html>
