@@ -31,3 +31,5 @@ dungeonbackground.addEventListener('click', function(){
 socket.on("changebackground", function (data) {
     document.getElementById('home').style.backgroundImage = data;
 });
+
+
