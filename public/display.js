@@ -1,7 +1,7 @@
 function switchVisible(div1) {
     if (div1) {
 
-        if (div1.style.display == 'none') {
+        if (div1.style.display === 'none') {
             div1.style.display = 'block';
             // div2.style.display = 'none';
         }

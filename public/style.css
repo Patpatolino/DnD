@@ -371,7 +371,7 @@
 }
 
 #questContainer {
-    display:none;
+    display: none;
     background: #efece7;
     z-index: 2;
     position: absolute;
@@ -473,16 +473,18 @@
     transform: scaleX(2)
 } */
 
-.background{
+.background {
     background-repeat: no-repeat;
     background-size: cover;
     height: 50px;
     width: 100px;
 }
-.background p{
+
+.background p {
     text-align: center;
     color: white;
 }
+
 .background:hover {
     -webkit-animation: flash 1s;
     animation: flash 1s;
@@ -491,13 +493,19 @@
 .background:first-child {
     background-image: url('/images/default.png');
 }
-.background:nth-child(2){
+
+.background:nth-child(2) {
     background-image: url('/images/forrest.png');
 }
-.background:nth-child(3){
+
+.background:nth-child(3) {
     background-image: url('/images/tavern.png');
 }
-.background:nth-child(4){
+
+.background:nth-child(4) {
     background-image: url('/images/dungeon.png');
 }
 
+*:focus {
+    outline: 0 !important;
+}
