@@ -24,7 +24,7 @@ function start() {
                 dnd(username, klasse);
             }
         } else {
-            alert("name ausfüllen");
+            alert("Wähle einen Namen!");
         }
     });
 }

@@ -1,12 +1,12 @@
 function switchVisible(div1) {
     if (div1) {
 
-        if (div1.style.display === 'none') {
-            div1.style.display = 'block';
+        if (div1.style.display === 'block') {
+            div1.style.display = 'none';
             // div2.style.display = 'none';
         }
         else {
-            div1.style.display = 'none';
+            div1.style.display = 'block';
             // div2.style.display = 'block';
         }
     }
