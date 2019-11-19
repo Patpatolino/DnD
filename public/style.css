@@ -1,29 +1,29 @@
 @font-face {
-    font-family: 'Morris Roman';
-    src: URL('/fonts/morrisroman.ttf') format('truetype');
-}
-
-#home {
+    font-family: "Morris Roman";
+    src: URL("/fonts/morrisroman.ttf") format("truetype");
+  }
+  
+  #home {
     margin: 0;
     height: 100%;
     width: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     background: rgb(87, 87, 87);
     background-image: url("/images/default.png");
     background-repeat: no-repeat;
     background-size: cover;
     transition: 1s;
-}
-
-#loginBody {
+  }
+  
+  #loginBody {
     display: block;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-#login {
+  }
+  
+  #login {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,57 +32,60 @@
     border: 1px solid #ccc !important;
     border-radius: 16px;
     background: #efece7;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-}
-
-#divWelcome{
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+  
+  #divWelcome {
     border-bottom: 1.2px solid #aa9576;
     width: 100%;
     padding-bottom: 15px;
-}
-
-#pWelcome {
+  }
+  
+  #pWelcome {
     font-size: 50px;
-}
-
-.headlineContainer {
+  }
+  
+  .headlineContainer {
     display: flex;
     border-bottom: 1.2px solid #ab9879;
-}
-
-.headline {
-    font-family: 'Morris Roman', cursive;
+  }
+  
+  .headlineContainer {
+  }
+  
+  .headline {
+    font-family: "Morris Roman", cursive;
     font-size: 30px;
     width: 100%;
     text-align: center;
     margin-block-end: 0px;
     margin-block-start: 3px;
-}
-
-.loginQuestion {
+  }
+  
+  .loginQuestion {
     font-weight: bold;
     padding-top: 30px;
     padding-bottom: 10px;
     font-size: 30px;
-}
-
-#loginName {
+  }
+  
+  #loginName {
     justify-content: center;
     display: flex;
-}
-
-#loginRadio {
+  }
+  
+  #loginRadio {
     display: flex;
     justify-content: center;
-}
-
-#loginSend {
+  }
+  
+  #loginSend {
     display: flex;
     justify-content: center;
     padding-top: 20px;
-}
-
-.container {
+  }
+  
+  .container {
     display: flex;
     padding-left: 5px;
     padding-right: 5px;
@@ -91,20 +94,20 @@
     justify-content: center;
     font-size: 22px;
     font-weight: bold;
-}
-
-#dndBody {
+  }
+  
+  #dndBody {
     display: none;
     height: 100vh;
-}
-
-#chatForm {
+  }
+  
+  #chatForm {
     width: 100%;
     display: flex;
     border-top: 1.2px solid #ab9879;
-}
-
-#chatForm input {
+  }
+  
+  #chatForm input {
     border: 0;
     width: 100%;
     text-indent: 5px;
@@ -114,9 +117,9 @@
     /* border-bottom-left-radius: 16px; */
     /* border-radius: 0.25rem; */
     background: #ebe1d1;
-}
-
-#chatForm button {
+  }
+  
+  #chatForm button {
     width: 6rem;
     background-color: #ebe1d1;
     border: none;
@@ -125,177 +128,188 @@
     border-radius: 0.25rem;
     border-bottom-right-radius: 16px;
     text-transform: uppercase;
-}
-
-#chatForm button:hover {
+  }
+  
+  #chatForm button:hover {
     background-color: #e9d9be;
-}
-
-/* .messages {
-    font-family: 'Montserrat', sans-serif;
-    height: 300px;
-    width: 700px;
-    resize: none;
-    margin: 0;
-    padding: 0;
-    border: 1px solid #ccc !important;
-    border-radius: 16px;
-    overflow: auto;
-} */
-
-.messages li {
+  }
+  
+  /* .messages {
+      font-family: 'Montserrat', sans-serif;
+      height: 300px;
+      width: 700px;
+      resize: none;
+      margin: 0;
+      padding: 0;
+      border: 1px solid #ccc !important;
+      border-radius: 16px;
+      overflow: auto;
+  } */
+  
+  .messages li {
     padding: 0.5rem;
-}
-
-.messages li:nth-child(odd) {
-    background: #ebe1d1
-}
-
-#dungeonMasterContainer {
+  }
+  
+  .messages li:nth-child(odd) {
+    background: #ebe1d1;
+  }
+  
+  #dungeonMasterContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 25px;
-}
-
-#dungeonMasterDiv {
+    padding-top: 1vh;
+  }
+  
+  #dungeonMasterDiv {
     display: flex;
     justify-content: center;
-    height: 200px;
-    width: 400px;
+    height: 25vh;
+    width: 40vw;
     background-image: url(/images/dm.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-}
-
-#dungeonMasterDiv:hover .hochladOverlap {
+  }
+  
+  #dungeonMasterDiv:hover .hochladOverlap {
     display: block;
-}
-
-#utilityContainer {
+  }
+  
+  #utilityContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 25px;
-}
-
-#chatContainer {
+    padding-top: 1vh;
+  }
+  
+  #chatContainer {
     background: #efece7;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
     border-radius: 16px;
-}
-
-#chatlog {
+  }
+  
+  #chatlog {
     scrollbar-width: none;
-    font-family: 'Montserrat', sans-serif;
-    height: 300px;
-    width: 700px;
+    font-family: "Montserrat", sans-serif;
+    height: 30vh;
+    width: 35vw;
     margin: 0;
     padding: 0;
     overflow: auto;
-}
-
-#chatlog::-webkit-scrollbar {
+  }
+  
+  #chatlog::-webkit-scrollbar {
     display: none;
-}
-
-#nameContainer {
+  }
+  
+  #nameContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-
-.names {
-    font-family: 'Morris Roman', cursive;
-    width: 100px;
+  }
+  
+  .names {
+    font-family: "Morris Roman", cursive;
+    width: 5vw;
     margin-block-start: 5px;
     margin-block-end: 5px;
-    height: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-size: 20px;
-    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2vw;
+    /* border: none; */
     text-align: center;
-    color: white;
-    font-weight: bold;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-#charContainer {
+    color: black;
+    text-shadow: 0px -1px 2px white, 0 1px white, 1px 0 white, 0 -1px white;
+    /* padding-top: 1vh; */
+    background-color: #ebe1d1;
+    border-radius: 5px;
+    padding-bottom: 1px;
+    padding-top: 2.3px;
+    /* border: 1px solid #AB9879; */
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+  
+  #charContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-
-.chars {
+  }
+  
+  .chars {
     position: relative;
     display: flex;
-    height: 130px;
-    width: 100px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.hochladOverlap {
+    height: 10vh;
+    /* resize: auto; */
+    width: 5vw;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .hochladOverlap {
     /* position: absolute; */
     z-index: 2;
     display: none;
     align-self: flex-end;
-}
-
-.chars:hover .hochladOverlap {
+  }
+  
+  .chars:hover .hochladOverlap {
     display: block;
-}
-
-/* .background {
-    background: grey;
-} */
-
-.diceImage {
+  }
+  
+  /* .background {
+      background: grey;
+  } */
+  
+  .diceImage {
     max-width: 100%;
     max-height: 100%;
-}
-
-#diceContainer {
+  }
+  
+  #diceContainer {
     display: flex;
+    position: absolute;
+    bottom: 0px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 1vh;
     cursor: pointer;
-}
-
-.dice {
+  }
+  
+  .dice {
     position: relative;
     display: flex;
-    height: 75px;
-    width: 75px;
+    height: 50px;
+    width: 50px;
     margin-left: 10px;
     margin-right: 10px;
-}
-
-/* Dropdown Button */
-.dropbtn {
+  }
+  
+  /* Dropdown Button */
+  .dropbtn {
     color: white;
     border: none;
     height: 100px;
     width: 100px;
     opacity: 0;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
     position: absolute;
     display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
     display: none;
     position: absolute;
     text-align: center;
@@ -303,32 +317,32 @@
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
     color: black;
     padding: 8px 16px;
     text-decoration: none;
     display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
     background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
     display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
     background-color: #3e8e41;
-}
-
-#closeQuestlog {
+  }
+  
+  #closeQuestlog {
     width: 30px;
     height: 30px;
     border: none;
@@ -337,23 +351,23 @@
     background-color: transparent;
     background-image: url(/images/cancel.svg);
     background-repeat: no-repeat;
-}
-
-/* .quests {
-    background: white;
-    font-family: 'Montserrat', sans-serif;
-    height: 250px;
-    resize: none;
-    border-radius: 16px;
-    overflow: auto;
-} */
-
-#questForm {
+  }
+  
+  /* .quests {
+      background: white;
+      font-family: 'Montserrat', sans-serif;
+      height: 250px;
+      resize: none;
+      border-radius: 16px;
+      overflow: auto;
+  } */
+  
+  #questForm {
     display: flex;
     border-top: 1.2px solid #ab9879;
-}
-
-#questForm input {
+  }
+  
+  #questForm input {
     border: 0;
     width: 100%;
     text-indent: 5px;
@@ -363,9 +377,9 @@
     /* border-bottom-left-radius: 16px; */
     /* border-radius: 0.25rem; */
     background: #ebe1d1;
-}
-
-#questForm button {
+  }
+  
+  #questForm button {
     width: 6rem;
     background-color: #ebe1d1;
     border: none;
@@ -374,96 +388,96 @@
     border-radius: 0.25rem;
     border-bottom-right-radius: 16px;
     text-transform: uppercase;
-}
-
-#questForm button:hover {
+  }
+  
+  #questForm button:hover {
     background-color: #e9d9be;
-}
-
-#newitem {
+  }
+  
+  #newitem {
     width: 160px;
-}
-
-#questContainer {
+  }
+  
+  #questContainer {
     display: none;
     background: #efece7;
     z-index: 2;
     position: absolute;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
     border-radius: 16px;
-}
-
-#questlog {
+  }
+  
+  #questlog {
     width: 280px;
     height: 500px;
     background: #efece7;
     scrollbar-width: none;
     scrollbar-width: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     overflow: auto;
-}
-
-#questlog::-webkit-scrollbar {
+  }
+  
+  #questlog::-webkit-scrollbar {
     display: none;
-}
-
-#questlog li {
-    list-style-image: url('/images/dragon.png');
+  }
+  
+  #questlog li {
+    list-style-image: url("/images/dragon.png");
     padding: 5px 10px;
     margin-bottom: 5px;
     position: relative;
-}
-
-#questlog li:nth-child(2n) {
-    background: #ebe1d1
-}
-
-#questlog li:hover:after,
-#questlog li.done:after {
-    content: '✔';
+  }
+  
+  #questlog li:nth-child(2n) {
+    background: #ebe1d1;
+  }
+  
+  #questlog li:hover:after,
+  #questlog li.done:after {
+    content: "✔";
     color: #060;
     position: absolute;
     right: 5px;
-}
-
-/* #showQuestlog {
-    height: 100px;
-    width: 100px;
-    background: url(images/scroll.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
-.showQuestlog {
+  }
+  
+  /* #showQuestlog {
+      height: 100px;
+      width: 100px;
+      background: url(images/scroll.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+  } */
+  
+  .showQuestlog {
     position: relative;
     display: flex;
-    height: 75px;
-    width: 75px;
+    height: 50px;
+    width: 50px;
     margin-left: 10px;
     margin-right: 10px;
-}
-
-.showQuestlog:hover .overlay {
+  }
+  
+  .showQuestlog:hover .overlay {
     opacity: 1;
-}
-
-.diceImage {
+  }
+  
+  .diceImage {
     display: block;
-}
-
-.overlay {
+  }
+  
+  .overlay {
     position: absolute;
     top: 50%;
     right: 50%;
     opacity: 0;
-    transition: .5s ease;
-}
-
-.dice:hover .overlay {
+    transition: 0.5s ease;
+  }
+  
+  .dice:hover .overlay {
     opacity: 1;
-}
-
-.hoverText {
+  }
+  
+  .hoverText {
     color: rgb(255, 255, 255);
     font-size: 20px;
     position: absolute;
@@ -471,55 +485,55 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-}
-
-
-#sidebar {
+  }
+  
+  #sidebar {
     display: flex;
     top: 35%;
     flex-direction: column;
     position: absolute;
     border: solid 1px #a69170;
     left: 5px;
-}
-
-/* #sidebar:hover {
-    transform: scaleX(2)
-} */
-
-.background {
+  }
+  
+  /* #sidebar:hover {
+      transform: scaleX(2)
+  } */
+  
+  .background {
     background-repeat: no-repeat;
     background-size: cover;
     height: 50px;
     width: 100px;
-}
-
-.background p {
+  }
+  
+  .background p {
     text-align: center;
     color: white;
-}
-
-.background:hover {
+  }
+  
+  .background:hover {
     -webkit-animation: flash 1s;
     animation: flash 1s;
-}
-
-.background:first-child {
-    background-image: url('/images/default.png');
-}
-
-.background:nth-child(2) {
-    background-image: url('/images/forrest.png');
-}
-
-.background:nth-child(3) {
-    background-image: url('/images/tavern.png');
-}
-
-.background:nth-child(4) {
-    background-image: url('/images/dungeon.png');
-}
-
-*:focus {
+  }
+  
+  .background:first-child {
+    background-image: url("/images/default.png");
+  }
+  
+  .background:nth-child(2) {
+    background-image: url("/images/forrest.png");
+  }
+  
+  .background:nth-child(3) {
+    background-image: url("/images/tavern.png");
+  }
+  
+  .background:nth-child(4) {
+    background-image: url("/images/dungeon.png");
+  }
+  
+  *:focus {
     outline: 0 !important;
-}
+  }
+  
